@@ -4,7 +4,12 @@
         <!-- <RouterLink :to="`/news/detail/${news.id}/${news.title}/${news.content}`">{{ news.title }}</RouterLink> -->
         <RouterLink :to="{
           name: 'detail',
-          params: {
+          // params: {
+          //   id: news.id,
+          //   title: news.title,
+          //   content: news.content,
+          // },
+          query: {
             id: news.id,
             title: news.title,
             content: news.content,

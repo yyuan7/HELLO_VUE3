@@ -12,7 +12,21 @@ const routes = [
             // use query
             // { path: 'detail', component: detail },
             // use params
-            { name:'detail', path: 'detail/:id/:title/:content?', component: detail, props: true },
+            { 
+                name:'detail', 
+                // use query
+                path: 'detail', 
+                // use params
+                // path: 'detail/:id/:title/:content?', 
+                component: detail, 
+                // treat all params as props
+                // props: true,
+                // treat query as props
+                props(route) {
+                    // console.log(route)
+                    return route.query;
+                }
+            },
         ]
     },
     { name: '/aboutPage', path: '/about', component: about },

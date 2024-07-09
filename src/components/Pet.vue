@@ -1,31 +1,19 @@
 <script setup lang='ts'>
 import { ref, reactive, onMounted } from 'vue'
-import axios from 'axios'
-import {nanoid} from 'nanoid'
+import { usePetStore } from '@/store/pet'
+import { storeToRefs } from 'pinia'
 
-let dogImgList = reactive([]);
+// let dogImgList = reactive([]);
+const petStore = usePetStore();
+// console.log(petStore)
+const {dogImgList} = storeToRefs(petStore);
 
 onMounted(() => {
     handleMore();
 })
 
 async function handleMore() {
-
-    try {
-        await axios.get('https://dog.ceo/api/breeds/image/random')
-            .then(
-                (response) => {
-                    const {data:{message}} = response;
-                    let obj = {
-                        id: nanoid(),
-                        message,
-                    };
-                    dogImgList.unshift(obj);
-                }
-            )
-    } catch (error) {
-        alert(error);
-    }
+    petStore.addDogImgAction();
 }
 </script>
 

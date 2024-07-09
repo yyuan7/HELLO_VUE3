@@ -1,20 +1,29 @@
 <script setup lang='ts'>
-import { ref } from 'vue'
+import { ref, toRefs } from 'vue'
+import { useCountStore } from '@/store/count'
+import { storeToRefs } from 'pinia'
 
-const sum = ref(1);
+const countStore = useCountStore();
+// console.log(countStore);
 const n = ref(1);
+// const {sum} = storeToRefs(countStore);
 
 function handleAdd() {
-    sum.value += n.value
+    // countStore.sum += n.value;
+    countStore.incrementAction(n.value);
 }
 function handleMinus() {
-    sum.value -= n.value
+    // preferred for multiple data change
+    countStore.$patch({
+        sum: countStore.sum - n.value
+    })
+    // countStore.sum -= n.value
 }
 </script>
 
 <template>
     <div class="count">
-        <h2>Sum: {{ sum }}</h2>
+        <h2>Sum: {{ countStore.sum }}</h2>
         <select v-model.number="n">
             <option value="1">1</option>
             <option value="2">2</option>

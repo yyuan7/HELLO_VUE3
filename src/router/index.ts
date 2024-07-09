@@ -7,18 +7,18 @@ import detail from '@/pages/38-route-params/Detail.vue'
 const routes = [
     { name: '/homePage', path: '/home', component: home },
     {
-        name: '/newsPage', path: '/news', component: news, 
+        name: '/newsPage', path: '/news', component: news,
         children: [
             // use query
             // { path: 'detail', component: detail },
             // use params
-            { 
-                name:'detail', 
+            {
+                name: 'detail',
                 // use query
-                path: 'detail', 
+                path: 'detail',
                 // use params
                 // path: 'detail/:id/:title/:content?', 
-                component: detail, 
+                component: detail,
                 // treat all params as props
                 // props: true,
                 // treat query as props
@@ -30,6 +30,7 @@ const routes = [
         ]
     },
     { name: '/aboutPage', path: '/about', component: about },
+    { path: '/', redirect: '/home' }
 ];
 
 const router = createRouter({

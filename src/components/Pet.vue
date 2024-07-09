@@ -8,6 +8,15 @@ const petStore = usePetStore();
 // console.log(petStore)
 const {dogImgList} = storeToRefs(petStore);
 
+// mutate: change-event info
+// state: change data
+petStore.$subscribe((mutate, state) => {
+    console.log('Dog Img Updated');
+    // store in the browser's storage space locally
+    // Inspection -> Application -> Storage -> Local Storage
+    localStorage.setItem('dogImgList', JSON.stringify(state.dogImgList));
+});
+
 onMounted(() => {
     handleMore();
 })
@@ -39,6 +48,12 @@ async function handleMore() {
 select, button {
     margin-right: 10px; 
     height: 25px;
+}
+ul {
+    padding-left: 20px;
+}
+li {
+    list-style: none;
 }
 img {
     height: 50px;

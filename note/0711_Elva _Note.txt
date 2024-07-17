@@ -1,0 +1,49 @@
+CONFLUENCE PAGE??
+change distri => change br => easy typo
+currently pick-up fee is in another system
+
+
+
+
+Operation on BR-Maintain:
+- Add new rules
+- Deactivate old rules
+- Verify??? rules (TBD: is that like to check rules close to end-date?)
+
+Operation on Simple-Rule:
+- Search via UPC => return the most recent BR for that product
+- Analysis on first/last/total scanned
+- Raja: for UPC with no record in simple-Rule, fill the bottom packaging row via online research
+Suggestion on Simple-Rule:
+- Requirement (elva): for non-redeemable product, will be glad if labels components for why not in state
+- Requirement (raja): include the registration year (sometimes they use the same upc even though divide into dif co., )
+
+Operation on CLYNK analyze: 
+- Analyze bottle volumes based on selected time periods
+- Monitor if new products hit the threshold
+
+Operation Detail: how to add a new BR?
+- Requirement: the current procedure is too complicate
+- Expectation: when setting a new BR, automatically cut the existing old one
+- Current operation: 
+1. add on BusinessRulesMaintain
+2. admit on Simple-Rule
+3. terminate the current BusinessRulesMaintain
+4. activate on BusinessRulesMaintain
+
+Operation Detail: how to find a new unrecorded item in the registry?
+1. download the excel sheet from https://www.maine.gov/dep/sustainability/bottlebill/index.html
+2. run SQL query (or manually) to compare the excel sheet with the CLYNK database
+Problem: 
+- can have short/expand UPC, which confuse system
+
+
+Do we need to check BR history based on specific UPC/company/any other factor?
+
+Do you use 3 buttons next to `Add New BR`? useless, even refresh always crash
+
+handling fee option based on state
+
+do have special bar code - unidentified 
+
+if cannot find biller => CLYNK expense account

@@ -13,6 +13,8 @@ import App from "@/App.vue";
 // Composables
 import { createApp } from "vue";
 
+// console.log(import.meta.env);
+
 const app = createApp(App);
 
 registerPlugins(app);

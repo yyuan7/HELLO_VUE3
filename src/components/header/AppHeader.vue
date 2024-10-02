@@ -1,7 +1,7 @@
 <template>
   <v-app-bar :elevation="2">
     <template #prepend>
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
+      <HeaderCollapse />
     </template>
 
     <v-app-bar-title>CLYNK APP Header</v-app-bar-title>
@@ -15,4 +15,6 @@
   </v-app-bar>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import HeaderCollapse from "./HeaderCollapse.vue";
+</script>

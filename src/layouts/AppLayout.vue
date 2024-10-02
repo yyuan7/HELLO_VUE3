@@ -18,10 +18,12 @@
     > -->
     <v-main class="align-center justify-center">
       APP Layout: Main Content
+      <Test />
     </v-main>
   </v-layout>
 </template>
 
 <script lang="ts" setup>
-import AppHeader from "./header/AppHeader.vue";
+import AppHeader from "@/components/header/AppHeader.vue";
+import Test from "@/components/Test.vue";
 </script>

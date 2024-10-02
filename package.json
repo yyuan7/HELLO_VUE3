@@ -5,9 +5,10 @@
     "dev": "vite --open",
     "build": "vue-tsc --noEmit && vite build",
     "build:stag": "vue-tsc --noEmit && vite build --mode test",
-    "build: prod": "vue-tsc --noEmit && vite build --mode production",
+    "build:pro": "vue-tsc --noEmit && vite build --mode production",
     "preview": "vite preview",
     "lint": "eslint . --fix --ignore-path .gitignore",
+    "format": "prettier --write .",
     "prepare": "husky"
   },
   "dependencies": {
@@ -34,7 +35,9 @@
     "eslint-plugin-vue": "^9.27.0",
     "husky": "^9.1.6",
     "pinia": "^2.1.7",
-    "sass": "1.77.6",
+    "prettier": "3.3.3",
+    "sass": "^1.77.6",
+    "sass-loader": "^16.0.2",
     "typescript": "^5.4.2",
     "unplugin-auto-import": "^0.17.6",
     "unplugin-fonts": "^1.1.1",

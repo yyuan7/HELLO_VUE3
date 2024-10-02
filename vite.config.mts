@@ -41,7 +41,8 @@ export default defineConfig({
     Vuetify({
       autoImport: true,
       styles: {
-        configFile: "src/styles/settings.scss",
+        // configFile: "src/styles/settings.scss",
+        configFile: "src/styles/index.scss",
       },
     }),
     Fonts({
@@ -61,6 +62,15 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
     extensions: [".js", ".json", ".jsx", ".mjs", ".ts", ".tsx", ".vue"],
+  },
+  // global sass variables
+  css: {
+    preprocessorOptions: {
+      scss: {
+        javascriptEnabled: true,
+        additionalData: '@import "./src/styles/variables.scss";',
+      },
+    },
   },
   server: {
     port: 3000,

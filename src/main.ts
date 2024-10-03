@@ -10,13 +10,14 @@ import { registerPlugins } from "@/plugins";
 // Components
 import App from "@/App.vue";
 
+// Routes
+import router from "./router";
+
 // Composables
 import { createApp } from "vue";
-
-// console.log(import.meta.env);
 
 const app = createApp(App);
 
 registerPlugins(app);
-
+app.use(router);
 app.mount("#app");

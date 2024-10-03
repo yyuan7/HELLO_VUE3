@@ -14,7 +14,10 @@
   "dependencies": {
     "@mdi/font": "7.4.47",
     "@vue/eslint-config-prettier": "^9.0.0",
+    "axios": "^1.7.7",
     "core-js": "^3.37.1",
+    "element-plus": "^2.8.4",
+    "mockjs": "^1.1.0",
     "roboto-fontface": "*",
     "vue": "^3.4.31",
     "vuetify": "^3.6.11"
@@ -44,6 +47,7 @@
     "unplugin-vue-components": "^0.27.2",
     "unplugin-vue-router": "^0.10.0",
     "vite": "^5.3.3",
+    "vite-plugin-mock": "^3.0.2",
     "vite-plugin-vue-layouts": "^0.11.0",
     "vite-plugin-vuetify": "^2.0.3",
     "vue-router": "^4.4.0",
